@@ -5,6 +5,9 @@
 
 A simple dialog that quickly helps you encrypt a value on your Windows machine using Data Protection APIs. The result is a base64-encoded value of the encrypted bytes.
 
+![image](https://github.com/timheuer/encryptit/assets/4821/253ad355-7f3a-4d1c-86d2-be714d3173af)
+
+
 ## Requirements
 
 Visual Studio 2022 17.6 or later is required to use this extension. 
