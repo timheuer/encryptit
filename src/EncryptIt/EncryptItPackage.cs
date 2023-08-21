@@ -7,7 +7,6 @@ using System.Threading;
 
 namespace EncryptIt;
 [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-[InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
 [ProvideMenuResource("Menus.ctmenu", 1)]
 [Guid(PackageGuids.EncryptItString)]
 public sealed class EncryptItPackage : ToolkitPackage

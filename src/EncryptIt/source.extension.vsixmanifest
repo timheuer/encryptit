@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="EncryptIt" Version="1.0" Language="en-US" Publisher="Tim Heuer" />
+        <Identity Id="EncryptIt" Version="|%CurrentProject%;GetBuildVersion|" Language="en-US" Publisher="Tim Heuer" />
         <DisplayName>EncryptIt</DisplayName>
         <Description xml:space="preserve">Quick tool to encrypt a string using Data Protection APIs on Windows.  Machine/user specific.</Description>
         <MoreInfo>https://github.com/timheuer/encryptit</MoreInfo>
