@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json.schemastore.org/vsix-publish",
+  "categories": [ "security" ],
+  "identity": {
+    "internalName": "EncryptIt",
+    "tags": [ "tools" ]
+  },
+  "overview": "README.md",
+  "publisher": "TimHeuer",
+  "repo": "https://github.com/timheuer/encryptit",
+  "qna": false
+}
