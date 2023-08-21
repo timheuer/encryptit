@@ -2,6 +2,8 @@
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media.Animation;
 
 namespace EncryptIt.Controls;
 public partial class Collector : Window
@@ -32,7 +34,7 @@ public partial class Collector : Window
         txtResult.Text = base64;
 
         // copy to clipboard
-        Clipboard.SetText(base64);
+        CopyToClipboardAndStatus(base64 );
 
         Debug.WriteLine($"Encrypted value: {base64}");
     }
@@ -45,6 +47,31 @@ public partial class Collector : Window
 
     private void btnClipCopy_Click(object sender, RoutedEventArgs e)
     {
-        Clipboard.SetText(txtResult.Text);
+        CopyToClipboardAndStatus(txtResult.Text);
+    }
+
+    internal void CopyToClipboardAndStatus(string valueToCopy)
+    {
+        Clipboard.SetText(valueToCopy);
+        // Set the TextBlock text here if needed
+        txtStatus.Text = "Copied to the clipboard!";
+
+        // Create a DoubleAnimation to animate the opacity property
+        DoubleAnimation da = new DoubleAnimation
+        {
+            From = 1.0,
+            To = 0.0,
+            Duration = new Duration(System.TimeSpan.FromSeconds(4))
+        };
+
+        // Create a Storyboard to contain the animations.
+        Storyboard sb = new Storyboard();
+        sb.Children.Add(da);
+
+        Storyboard.SetTargetProperty(da, new PropertyPath("Opacity"));
+        Storyboard.SetTarget(da, txtStatus);
+
+        // Begin the animation.
+        sb.Begin();
     }
 }

@@ -28,9 +28,18 @@
         </StackPanel>
         <TextBox Margin="0,5,10,0" Grid.Row="1" Grid.Column="1" Name="txtResult" AcceptsReturn="True" VerticalContentAlignment="Top" Height="100" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" MinWidth="210" />
 
+        <Grid Grid.Row="2" Grid.Column="2" Margin="0,5,10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="85"/>
+                <ColumnDefinition Width="85"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="txtStatus" Grid.Column="0" Margin="5,0,5,0"/>
+            <Button Grid.Column="1" Content="{x:Static resx:UIStrings.BUTTON_ENCRYPT}" VerticalAlignment="Center" Width="75" Height="23" Name="btnEcnrypt" Click="btnEcnrypt_Click" />
+            <Button Grid.Column="2" Content="{x:Static resx:UIStrings.BUTTON_CANCEL}" VerticalAlignment="Center" Width="75" Height="23" IsDefault="True" Name="btnCancel" Click="btnCancel_Click" />
+        </Grid>
         <StackPanel Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,5,0,0">
-            <Button Content="{x:Static resx:UIStrings.BUTTON_ENCRYPT}" Margin="10,0,0,0" VerticalAlignment="Center" Width="75" Height="23" Name="btnEcnrypt" Click="btnEcnrypt_Click" />
-            <Button Content="{x:Static resx:UIStrings.BUTTON_CANCEL}" Margin="10,0" VerticalAlignment="Center" Width="75" Height="23" IsDefault="True" Name="btnCancel" Click="btnCancel_Click" />
+            
         </StackPanel>
     </Grid>
 </Window>
