@@ -11,7 +11,7 @@ jobs:
     needs: build
     environment:
       name: production
-      url: https://marketplace.visualstudio.com/items?itemName=EncryptIt
+      url: https://marketplace.visualstudio.com/items?itemName=TimHeuer.EncryptIt
     name: Publish
     runs-on: windows-2022
     permissions:

@@ -1,6 +1,6 @@
 [![Build](https://github.com/timheuer/encryptit/actions/workflows/_build.yaml/badge.svg)](https://github.com/timheuer/encryptit/actions/workflows/_build.yaml)
 [![GitHub last commit](https://img.shields.io/github/last-commit/timheuer/encryptit)](https://github.com/timheuer/encryptit/)
-[![VS Marketplace Badge](https://img.shields.io/visual-studio-marketplace/v/encryptit?label=VS%20Marketplace&color=purple&logo=visualstudio)](https://marketplace.visualstudio.com/items?itemName=encryptit)
+[![VS Marketplace Badge](https://img.shields.io/visual-studio-marketplace/v/timheuer.encryptit?label=VS%20Marketplace&color=purple&logo=visualstudio)](https://marketplace.visualstudio.com/items?itemName=TimHeuer.EncryptIt)
 # EncryptIt!
 
 A simple dialog that quickly helps you encrypt a value on your Windows machine using Data Protection APIs. The result is a base64-encoded value of the encrypted bytes.
