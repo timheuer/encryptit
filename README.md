@@ -7,7 +7,7 @@ A simple dialog that quickly helps you encrypt a value on your Windows machine u
 
 ## Requirements
 
-Visual Studio 2022 17.6 or later is required to use this extension.  Additionally since GitHub Actions is obviously a feature of GitHub, you will need to be attached to an active GitHub.com repository.
+Visual Studio 2022 17.6 or later is required to use this extension. 
 
 ## Code of Conduct
 
