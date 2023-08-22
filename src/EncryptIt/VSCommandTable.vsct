@@ -28,6 +28,10 @@
     </Buttons>
   </Commands>
 
+	<KeyBindings>
+		<KeyBinding guid="EncryptIt" id="EncryptCommand" editor="guidVSStd97" key1="X" mod1="Control Shift"/>
+	</KeyBindings>
+
   <Symbols>
     <GuidSymbol name="EncryptIt" value="{1355e35c-8eba-4d5b-8a9e-8597b8967853}">
       <IDSymbol name="MyMenuGroup" value="0x0001" />
