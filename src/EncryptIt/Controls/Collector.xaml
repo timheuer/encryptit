@@ -8,6 +8,60 @@
              mc:Ignorable="d" 
              Icon="pack://application:,,,/EncryptIt;component/Resources/icon_32.png"
              d:DesignHeight="450" d:DesignWidth="800" Width="630" Height="300" ResizeMode="NoResize" Title="EncryptIt!" WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ImageButtonTemplate" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid Margin="0,10,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -22,8 +76,8 @@
         <TextBox Margin="0,0,10,0" Grid.Row="0" Grid.Column="1" Name="txtValue" VerticalAlignment="Top" HorizontalAlignment="Stretch" MinWidth="150" TextWrapping="Wrap" AcceptsReturn="True" Height="100"/>
         <StackPanel Grid.Row="1" Grid.Column="0" >
             <Label Margin="0,5,0,0" Content="{x:Static resx:UIStrings.LABEL_ENCRYPTED}" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="SemiBold" />
-            <Button HorizontalAlignment="Right" Margin="0,0,5,0" ToolTip="{x:Static resx:UIStrings.TIP_COPY}" x:Name="btnClipCopy" Click="btnClipCopy_Click">
-                <Image Source="pack://application:,,,/EncryptIt;component/Resources/copy.png" Width="16"/>
+            <Button Style="{DynamicResource ImageButtonTemplate}" HorizontalAlignment="Right" Margin="0,0,5,0" ToolTip="{x:Static resx:UIStrings.TIP_COPY}" x:Name="btnClipCopy" Click="btnClipCopy_Click">
+                <Image Source="pack://application:,,,/EncryptIt;component/Resources/copy.png" Width="20"/>
             </Button>
         </StackPanel>
         <TextBox Margin="0,5,10,0" Grid.Row="1" Grid.Column="1" Name="txtResult" AcceptsReturn="True" VerticalContentAlignment="Top" Height="100" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" MinWidth="210" />
