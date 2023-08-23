@@ -124,7 +124,7 @@
     <value>E_ncrypt</value>
   </data>
   <data name="LABEL_ENCRYPTED" xml:space="preserve">
-    <value>Encryped value (base64-encoded):</value>
+    <value>Encrypted value (base64-encoded):</value>
   </data>
   <data name="LABEL_VALUE" xml:space="preserve">
     <value>Value to encrypt:</value>

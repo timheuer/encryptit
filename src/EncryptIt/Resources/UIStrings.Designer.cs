@@ -79,7 +79,7 @@ namespace EncryptIt.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Encryped value (base64-encoded):.
+        ///   Looks up a localized string similar to Encrypted value (base64-encoded):.
         /// </summary>
         public static string LABEL_ENCRYPTED {
             get {
