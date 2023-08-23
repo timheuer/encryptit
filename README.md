@@ -5,7 +5,7 @@
 
 A simple dialog that quickly helps you encrypt a value on your Windows machine using Data Protection APIs. The result is a base64-encoded value of the encrypted bytes.
 
-![image](https://github.com/timheuer/encryptit/assets/4821/253ad355-7f3a-4d1c-86d2-be714d3173af)
+![image](https://github.com/timheuer/encryptit/assets/4821/f6a89c14-cbe6-4224-9cd7-da2b41a36f50)
 
 
 ## Requirements
